@@ -1,0 +1,30 @@
+#java -jar ./moco-runner-1.5.0-standalone.jar -p 8888 -c json配置文件
+java -jar ./moco-runner-1.5.0-standalone.jar  http -p 8899 -c startUp1.json
+
+格式请看json例子
+get--带参数queries
+post--带参数forms
+
+加入coikies
+
+
+moco一些常用参数.
+
+
+description：用来描述这个会话的目的，它只是用作注释，在运行时将被忽略。
+request：请求内容。
+response：响应内容。
+uri：请求关注点。
+method：基于指定的HTTP方法（get、post、put、delete、HEAD）。
+queries：get请求参数。
+forms：post请求参数。
+text：文本。
+json：Json格式。
+file：文件。
+headers：信息头。
+cookies：cookie信息。
+status：响应状态代码。
+redirectTo：将请求重定向到指定的url上。
+match：正则表达式。
+latency：延迟。
+template：模板。

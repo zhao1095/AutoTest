@@ -1,0 +1,23 @@
+[
+  {
+    "description": "这是一个携带Heads的请求",
+    "request": {
+      "uri": "/post/with/headers",
+      "method": "post",
+      "headers":{
+        "content-type": "application/json"
+      },
+      "json": {
+        "name":"xbox",
+        "sex": "boy"
+      }
+    },
+    "response":{
+      "json": {
+        "xbox": "filse",
+        "text": "这是验证编码格式的",
+        "status": "1"
+      }
+    }
+  }
+]
