@@ -4,6 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.course">
     <select id="getUserCount" resultType="Integer">
-
+        select  count(*) from user ;
     </select>
+
+    <insert id="addUser" parameterType="com.course.model.User">
+        insert into user (name,score,id)
+        values(#{name},#{score},#{id});
+    </insert>
+
+    <update id="updateUser" parameterType="com.course.model.User">
+        update  user set name = #{name},score=#{score}
+        where NAME = #{name};
+    </update>
+
+    <delete id="delUser" parameterType="Integer">
+        delete  from user where  id = #{id};
+    </delete>
 </mapper>

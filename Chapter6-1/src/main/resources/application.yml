@@ -2,17 +2,18 @@ server:
     port: 8888
 logging:
     path: logs
-    file: mylog.log
+    file: mylog.logging
 spring:
     application:
         name: myTest
     datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/course
-    username: root
-    password: 123456
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/course
+        username: root
+        password: 123456
 
 mybatis:
+    # 1. 指定 MyBatis 核心配置文件的位置（必须加 classpath:）
+    config-location: classpath:mybatis-config.xml
     type-aliases-package: com.course.model
-    mapper-application:
-        - mapper/*
+    mapper-location: classpath:mapper/mysql.xml
