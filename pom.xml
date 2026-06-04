@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+
+    <!-- 继承 Spring Boot 父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.10</version> <!-- 建议使用稳定版本 -->
+        <relativePath/>
+    </parent>
+
+        <artifactId>Chapter</artifactId>
+        <packaging>pom</packaging>
+        <groupId>com.course.code</groupId>
+        <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>Chapter1-1</module>
+        <module>Chapter2-1</module>
+        <module>Chapter2-1</module>
+        <module>Chapter4-1</module>
+        <module>Chapter5-1</module>
+        <module>Chapter6-1</module>
+
+    </modules>
+    <dependencies>
+        <!-- Extent Reports 核心依赖 -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
+        <!--ExtentReports（尤其是 V4 和 V5 版本）底层使用 Freemarker 模板引擎来生成 HTML 报告页面。
+            虽然你引入了 ExtentReports 的依赖，-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.31</version> <!-- 推荐使用稳定版本 -->
+        </dependency>
+
+
+        <!-- TestNG 依赖 -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version> <!-- 或者其他适合的版本 -->
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

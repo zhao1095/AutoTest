@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course.model">
+    <!--登录接口sql-->
+    <select id="loginCase" parameterType="com.course.model.LoginCase" resultType="com.course.model.LoginCase">
+      select userName,password,expected from logincase
+        where userName = #{userName}
+    </select>
+    <!--获取用户信息-->
+    <select id="getUserInfoCase"  parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.GetUserInfoCase" >
+        select  * from getuserinfocase where userID = #{userID};
+    </select>
+    <!--获取用户列表信息-->
+    <select id="getUserListCase" parameterType="com.course.model.GetUserListCase" resultType="com.course.model.GetUserListCase">
+        select  * from getuserlistcase where  id = #{id};
+    </select>
+    <!--更新/删除用户信息-->
+    <select id="updateUserInfoCase" parameterType="com.course.model.UpdateUserInfoCase" resultType="com.course.model.UpdateUserInfoCase">
+        select  * from  updateuserinfocase where id =#{id};
+    </select>
+    <!--添加用户信息-->
+    <select id="addUserCase" parameterType="integer" resultType="com.course.model.AddUserCase">
+        select  * from  addusercase where id =#{id};
+    </select>
+
+
+
+    <!-- 1 获取user表中的id来对应getuserinfo表中的userid -->
+    <select id="getUserById" parameterType="Integer" resultType="com.course.model.User">
+    select * from user where id = #{id}
+    </select>
+    <!-- 2、查询user业务表：按用例里的sex查用户列表，用来对比 -->
+    <select id="queryUserBySex" parameterType="com.course.model.GetUserListCase" resultType="com.course.model.User">
+
+    SELECT * FROM user WHERE sex = #{sex,jdbcType=INTEGER};
+    </select>
+
+    <!-- 新增用户后，按用户名查询入库数据，用于校验 -->
+    <select id="addUserInfo" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
+    select * from user where userName = #{userName} limit 1;
+    </select>
+    <!-- 更新用户后，按用户名查询入库数据，用于校验 -->
+    <select id="updateUserInfo" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
+    select * from user where userName = #{userName} ;
+    </select>
+
+</mapper>

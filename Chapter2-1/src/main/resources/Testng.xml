@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name=" 测试套件">
+    <test name="这是测试模块">
+        <classes>
+            <class name="com.Tester.Methods.Report.TesterMethodsReport"/>
+                    <methods>
+                        <include name="test1"/>
+                        <include name="test2"/>
+                        <include name="test3"/>
+                        <include name="logs"/>
+                    </methods>
+        </classes>
+
+    </test>
+    <listeners>
+        <listener class-name="com.vimalselvam.testng.listener"/>
+    </listeners>
+
+</suite>
