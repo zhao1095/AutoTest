@@ -4,7 +4,7 @@
     <test name="login">
         <classes >
             <class name="com.coures.testng.suite.SuiteConfig"/>
-            <class name="com.coures.testng.suite.LoginTest"/>
+            <class name="com.coures.testng.suite.com.corese.LoginTest"/>
         </classes>
     </test>
     <test name="pay">
