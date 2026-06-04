@@ -51,6 +51,7 @@
 
     </dependencies>
 
+    <!--默认会打包所有依赖并生成可执行 Jar。-->
     <build>
         <plugins>
             <plugin>
